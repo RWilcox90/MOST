@@ -26,3 +26,11 @@ rownames(ceST) <- c()
 rownames(ceMST) <- c()
 rownames(ceMS) <- c()
 rownames(ceMT) <- c()
+
+colnames(ceNST)[2] <- "Intercept"
+colnames(ceNS)[2] <- "Intercept"
+colnames(ceNT)[2] <- "Intercept"
+colnames(ceST)[2] <- "Intercept"
+colnames(ceMST)[2] <- "Intercept"
+colnames(ceMS)[2] <- "Intercept"
+colnames(ceMT)[2] <- "Intercept"
