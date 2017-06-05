@@ -10,6 +10,7 @@ wmmDat <- wmmDat[-seq(nrow(wmmDat), by=-1, len=2),]
 ## Select only variables needed for analysis
 wmmPSNMT <- wmmDat %>% select(user_id, StartTimeStr, Positive, Self, Negative, Mood, Thinking)
 wmmPSNMT <- wmmPSNMT %>% filter(Thinking=="Something else"|Thinking=="What I was doing")
+wmmPSNMT$Thinking <- factor(wmmPSNMT$Thinking)
 ## Separates StartTimeStr into 'Day', 'Month', 'Rest'
 ## and then removes 'Day' and 'Rest'
 wmmPSNMT <- separate(wmmPSNMT, col=StartTimeStr, into=c("Day", "Month", "Rest"), sep=" ")
@@ -53,7 +54,7 @@ genDat <- genDat[good,]
 ## in which the users match
 wmmPSNMTG_clean <- merge(wmmPSNMT_clean, genDat, by.x = "user_id", by.y = "user_id", all.x = TRUE)
 
-write.csv(wmmPSNMTG_clean, file = "wmmPSNMTG_clean.csv", row.names = FALSE)
+write.csv(wmmPSNMTG_clean, file = "InitialProcessing/wmmPSNMTG_clean.csv", row.names = FALSE)
 
 ## Following for loop selects for users that generated atleast 4 responses per month
 ## This is to be done after the previous for loop that selects for users that 
