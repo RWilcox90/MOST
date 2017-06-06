@@ -18,6 +18,8 @@
 ** Social
 ** Purpose
 
+* WMM_Master_Merge.R can be used to create a Master file that combines the Users, Step2, Step3, and Step4 files as well as parsing the 'Time' variable from the Step3 file.
+
 ## Further Analysis
 * First, you’ll run LMER_Models.R to create linear mixed effects models
 ** NOTE: Keep these objects within R environment, they will be used in the ‘ExtractCoEf.R’ script
